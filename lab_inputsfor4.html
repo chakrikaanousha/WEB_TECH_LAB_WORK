@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgba(240, 208, 69, 0.884);
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <p>Enter names in the fields, then click "Submit" to submit the form:</p>
+    <form id="frm1" action="/action_page.php">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname">
+
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname">
+
+        <br><br>
+        <input type="button" onclick="submitForm()" value="Submit">
+    </form>
+
+    <script>
+        function submitForm() {
+            document.getElementById("frm1").submit();
+        }
+    </script>
+</body>
+</html>

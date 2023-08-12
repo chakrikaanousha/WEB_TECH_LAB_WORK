@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Validation</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const passwordInput = $('#password');
+      const submitButton = $('#submit');
+      const capitalCheck = $('#capital-check');
+      const smallCheck = $('#small-check');
+      const lengthCheck = $('#length-check');
+      const specialCharCheck = $('#special-char-check');
+      const numberCheck = $('#number-check');
+
+      // Function to validate checkboxes
+      function validateCheckboxes() {
+        const password = passwordInput.val();
+
+        capitalCheck.prop('checked', /[A-Z]/.test(password));
+        smallCheck.prop('checked', /[a-z]/.test(password));
+        lengthCheck.prop('checked', password.length >= 8);
+        specialCharCheck.prop('checked', /[!@#$%^&*(),.?":{}|<>]/.test(password));
+        numberCheck.prop('checked', /\d/.test(password));
+
+        // Activate submit button if all conditions are met
+        submitButton.prop('disabled', !(capitalCheck.is(':checked') && smallCheck.is(':checked') && lengthCheck.is(':checked') && specialCharCheck.is(':checked') && numberCheck.is(':checked')));
+      }
+
+      // Event listener for password input keyup
+      passwordInput.on('keyup', function() {
+        validateCheckboxes();
+      });
+
+      // AJAX request for password validation
+      $('#password-form').on('submit', function(event) {
+        event.preventDefault();
+
+        const password = passwordInput.val();
+
+        $.ajax({
+          url: 'validate_password.php',
+          type: 'POST',
+          data: { password: password },
+          success: function(response) {
+            // Process the response as needed
+            console.log(response);
+          },
+          error: function(error) {
+            // Handle any errors
+            console.error(error);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Password Validation</h1>
+  <form id="password-form">
+    <label for="password">Password:</label>
+    <input type="password" id="password">
+    <br>
+    <input type="checkbox" id="capital-check" disabled>At least one capital letter<br>
+    <input type="checkbox" id="small-check" disabled>At least one small letter<br>
+    <input type="checkbox" id="length-check" disabled>Minimum length of 8 characters<br>
+    <input type="checkbox" id="special-char-check" disabled>At least one special character<br>
+    <input type="checkbox" id="number-check" disabled>At least one number<br>
+    <br>
+    <input type="submit" id="submit" value="Submit" disabled>
+  </form>
+</body>
+</html>

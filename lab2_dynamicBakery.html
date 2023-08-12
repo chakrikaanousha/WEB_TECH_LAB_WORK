@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>THE COOKIE JAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
+
+    <style>
+        #con {
+            display: grid;
+            height: 180vh;
+            grid-template-areas: 
+            'header header header header'
+            'main main main main'
+            'about about imag imag'
+            'about about imag imag'
+            'about about imag imag';
+        }
+
+        #con bor {
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            background-color: rgb(1, 5, 5);
+            padding: 20px;
+            border-radius: 30px;
+            font-size: 30px;
+        }
+
+        #con bor a {
+            margin-right: 20px;
+            color: rgba(240, 208, 69, 0.884);
+            text-decoration: none;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: rgba(240, 208, 69, 0.884);
+            border-color: black;
+        }
+
+        .centered {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+        }
+        body{
+            background-color: black;
+        }
+
+        #header {
+            grid-area: header;
+            font-size: 30px;
+            color: rgba(240, 208, 69, 0.884);
+            background: black;
+            font-family: 'Pacifico', cursive;
+        }
+
+        #main {
+            grid-area: main;
+            background-color: rgba(240, 208, 69, 0.884);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        #about {
+            grid-area: about;
+            background-color: rgb(95, 57, 25);
+            font-family: 'Quicksand', sans-serif;
+            color: aliceblue;
+            font-size: 30vw;
+        }
+
+        #imag {
+            grid-area: imag;
+            background-color: brown;
+        }
+
+        a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        a {
+            color: rgba(240, 208, 69, 0.884);
+            font-family: 'Times New Roman', Times, serif;        
+            text-decoration: none;
+        }
+
+        heading {
+            font-family: 'Merriweather', serif;
+            color: aliceblue;
+        }
+
+        .bottom-left {
+            position: absolute;
+            top: 800px;
+            bottom: 0px;
+            left: 100px;
+            color: white;
+            font-size: 40px;
+        }
+
+        .bordered-text {
+            border: 2px solid rgba(240, 208, 69, 0.884);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <bor>
+            <a href="page1.html">ABOUT</a>
+            <a href="lab2_contactUspage.html">GET IN TOUCH</a>
+            <a href="lab_inputsfor4.html">LOG IN</a>
+        </bor>
+        
+        <div id="main">
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1556795573-1f36b83594f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1475&q=80" alt="loading" style="width:100%;">
+                <div class="centered">
+                    <h1>THE COOKIE JAR</h1>
+                </div>
+            </div>
+
+            <div id="header">About Us:</div>
+            <div id="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure officia voluptas perspiciatis molestias accusantium dolor totam? Rem, sunt corrupti? Maxime ipsum nobis eveniet earum aliquam veritatis minus praesentium. Cumque minima repudiandae, magnam, corrupti facilis non deleniti accusantium tenetur libero sed maxime assumenda eum tempore dolor nesciunt fugiat, error vero dignissimos architecto perspiciatis quas perferendis quibusdam officiis. Quo qui doloremque ipsum rerum alias itaque reprehenderit corporis blanditiis! Sint dicta incidunt sapiente placeat velit? Laboriosam adipisci dolorum similique commodi accusamus mollitia. Nostrum libero deserunt dolorem, exercitationem consectetur sed magnam quia. Labore, quia pariatur dolorem repellat iure quis vitae tempore laborum earum.</div>
+
+            <div class="bottom-left">
+                <div class="bordered-text">
+                    <a href="lab2_contactUspage.html">GET IN TOUCH</a>
+                </div>
+            </div> 
+        </div>            
+    </div>
+</body>
+</html>

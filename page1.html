@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>ABOUT US </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgb(95, 57, 25);
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #e6af1b;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80')">
+        <h3>CROSSIONT</h3>
+      </div>
+      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80')">
+        <h3>CUPCAKES</h3>
+      </div>
+      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1646163100994-9ead46cbc9fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80')">
+        <h3>PANCAKES</h3>
+      </div>
+      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1638430051008-9d405153c2b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80')">
+        <h3>BROWNIE</h3>
+      </div>
+      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1605807646983-377bc5a76493?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80')">
+        <h3>CAKES</h3>
+      </div>
+
+    </div>
+
+    <script>
+        const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+    </script>
+  </body>
+</html>

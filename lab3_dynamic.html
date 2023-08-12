@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>THE COOKIE JAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #con {
+      display: grid;
+      height: 100vh;
+      grid-template-areas:
+        'header header header header'
+        'main main main main'
+        'about about imag imag'
+        'about about imag imag';
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      color: rgba(240, 208, 69, 0.884);
+      border-color: black;
+    }
+
+    .centered {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+    }
+
+    #header {
+      grid-area: header;
+      font-size: 30px;
+      color: rgba(240, 208, 69, 0.884);
+      background: black;
+      font-family: 'Pacifico', cursive;
+    }
+
+    #main {
+      grid-area: main;
+      background-color: rgba(240, 208, 69, 0.884);
+    }
+
+    #about {
+      grid-area: about;
+      background-color: rgb(95, 57, 25);
+      font-family: 'Quicksand', sans-serif;
+      color: aliceblue;
+      font-size: 30px;
+      padding: 20px;
+    }
+
+    #imag {
+      grid-area: imag;
+      background-color: brown;
+    }
+
+    a:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    a {
+      color: rgba(240, 208, 69, 0.884);
+      font-family: 'Times New Roman', Times, serif;
+      text-decoration: none;
+    }
+
+    heading {
+      font-family: 'Merriweather', serif;
+      color: aliceblue;
+    }
+
+    .bottom-left {
+      position: absolute;
+      bottom: 5px;
+      left: 50px; /* Adjusted left position */
+      color: white;
+      font-size: 40px;
+    }
+
+    .bordered-text {
+      border: 2px solid rgba(240, 208, 69, 0.884);
+      padding: 2px;
+    }
+
+    .cookie-jar-text {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: rgba(240, 208, 69, 0.884);
+      font-size: 45px;
+      font-family:  'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="con">
+    <div id="main">
+      <div class="container">
+        <img src="https://images.unsplash.com/photo-1556795573-1f36b83594f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1475&q=80" alt="loading" style="width: 100%;">
+        <div class="cookie-jar-text">
+          <h1>THE <br> COOKIE <br> JAR</h1>
+        </div>
+        <div class="centered"></div>
+      </div>
+    </div>
+    <div id="header"></div>
+    <div class="bottom-left">
+      <div class="bordered-text">
+        <a href="lab2_contactUspage.html">GET IN TOUCH</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

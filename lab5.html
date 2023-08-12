@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS Greeting and Thought Generator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<style>
+  body {
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  button {
+    background-color: lightcoral;
+  }
+</style>
+<body ng-app="greetingApp" ng-controller="greetingController">
+  <h1>{{ greeting }}</h1>
+  <p>{{ thought }}</p>
+  <button ng-click="generateThought()">Generate Thought</button>
+  <script>
+    angular.module('greetingApp', []).controller('greetingController', function($scope) {
+      $scope.greeting = 'Hello, AngularJS !';
+      $scope.thought = '';
+
+      $scope.generateThought = function() {
+        var thoughts = [
+          'Life is what happens when you\'re busy making other plans.',
+          'The only way to do great work is to love what you do.',
+          'In the middle of difficulty lies opportunity.',
+          'The best way to predict the future is to create it.',
+          'Believe you can and you\'re halfway there.'
+        ];
+        var randomIndex = Math.floor(Math.random() * thoughts.length);
+        $scope.thought = thoughts[randomIndex];
+      };
+    });
+  </script>
+</body>
+</html>
